@@ -5,10 +5,7 @@ public class HashSet{
         int val;
     }
     public void insert(int input){
-        int hashValue = input;
-        while(hashValue > 9){
-            hashValue = hashValue % 10;
-        }
+        int hashValue = input % 10;
         Node current = hash[hashValue];
         Node newNode = new Node();
         newNode.val = input;
@@ -23,10 +20,7 @@ public class HashSet{
     }
 
     boolean contains(int target){
-        int hashVal = target;
-        while(hashVal > 9){
-            hashVal = hashVal % 10;
-        }
+        int hashVal = target % 10;
         if(hash[hashVal] == null){
             return false;
         }
@@ -40,10 +34,7 @@ public class HashSet{
     }
 
     boolean remove(int target){
-        int hashVal = target;
-        while(hashVal > 9){
-            hashVal = hashVal % 10;
-        }
+        int hashVal = target % 10;
         if(hash[hashVal] == null){
             return false;
         }
